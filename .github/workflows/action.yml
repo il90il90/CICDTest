@@ -1,0 +1,9 @@
+   - name: Copy folder content recursively to remote
+     uses: garygrossgarten/github-action-scp@release
+     with:
+       local: my-repo
+       remote: ~/target/directory
+       host: 20.151.212.14
+       port: 22
+       username: apm-admin
+       privateKey: ${{secrets.PRIVATE_KEY}}
