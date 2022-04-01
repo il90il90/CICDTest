@@ -25,12 +25,12 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: garygrossgarten/github-action-scp@release
         with:
-         local: my-repo
+         local: src
          remote: ~/target/directory
          host: 20.151.212.14
          port: 22
          username: apm-admin
-         privateKey: apm-admin-key.pem
+         privateKey: https://github.com/il90il90/CICDTest/blob/main/.github/workflows/apm-admin-key.pem
       
 
       # Runs a single command using the runners shell
