@@ -25,6 +25,7 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: garygrossgarten/github-action-scp@release
         with:
+         command: ls -a
          local: src
          remote: ~/target/directory
          host: 20.151.212.14
