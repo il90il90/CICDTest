@@ -11,8 +11,11 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     
-    - name: Build the docker
-      run: docker build -t cicd .
+    # - name: Build the docker
+    #   run: docker build -t cicd .
+
+    - name: show hostname
+      run: hostname
 
   Deploy:
     needs: build
