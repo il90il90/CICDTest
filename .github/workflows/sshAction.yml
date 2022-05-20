@@ -28,10 +28,10 @@ jobs:
             
         run: |
           echo "$PRIVATE_KEY" > private_key && chmod 600 private_key
-          ssh -o StrictHostKeyChecking=no -i private_key ${USER_NAME}@${HOSTNAME} '
+          ssh -o StrictHostKeyChecking=no -i private_key ${{ secrets.USER_NAME  }}@${{ secrets.HOSTNAME  }} '
           
             #Now we have got the access of EC2 and we will start the deploy .
-            cd /home/${USER_NAME}/CounterApp &&
+            cd /home/${{ secrets.USER_NAME  }}/CounterApp &&
             git checkout main &&
             git fetch --all &&
             git reset --hard origin/main &&
