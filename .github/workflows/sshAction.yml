@@ -23,8 +23,8 @@ jobs:
       - name: Deploy in EC2
         env:
             PRIVATE_KEY: ${{ secrets.AWS_PRIVATE_KEY  }}
-            HOSTNAME : ${{ secrets.HOSTNAME  }}
-            USER_NAME : ${{ secrets.USER_NAME  }}
+            HOSTNAME : APM-NodeJS-Dev
+            USER_NAME : 'apm-admin'
             
         run: |
           echo "$PRIVATE_KEY" > private_key && chmod 600 private_key
