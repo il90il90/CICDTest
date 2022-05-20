@@ -23,7 +23,7 @@ jobs:
       - name: Deploy in EC2
         env:
             PRIVATE_KEY: ${{ secrets.AWS_PRIVATE_KEY  }}
-            HOSTNAME : APM-NodeJS-Dev
+            HOSTNAME : '20.63.98.89'
             USER_NAME : apm-admin
             
         run: |
