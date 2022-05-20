@@ -31,9 +31,9 @@ jobs:
           ssh -o StrictHostKeyChecking=no -i private_key ${USER_NAME}@${HOSTNAME} '
           
             #Now we have got the access of EC2 and we will start the deploy .
-            cd /home/apm-admin/CounterApp &&
+            cd /home/${HOSTNAME}/CounterApp &&
             git checkout main &&
             git fetch --all &&
             git reset --hard origin/main &&
-            git pull origin main'
+            git pull origin main '
 
