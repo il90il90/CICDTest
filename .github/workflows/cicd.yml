@@ -27,7 +27,7 @@ jobs:
 
         run: |
           echo "$PRIVATE_KEY" > private_key && chmod 600 private_key
-          ssh -o StrictHostKeyChecking=no -i private_key -p 7122 il90@109.190.128.68'
+          ssh -o StrictHostKeyChecking=no -i private_key il90@109.190.128.68:7122'
             cd /home/apm-admin/CICDTest &&
             git checkout main &&
             git fetch --all &&
