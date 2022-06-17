@@ -19,15 +19,17 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-      - name: Deploy in EC2
+      - name: Deployment
         env:
           PRIVATE_KEY: ${{ secrets.PRIVATE_KEY  }}
           HOST: ${{ secrets.HOST  }}
           USER_NAME: ${{ secrets.USER_NAME }}
           PORT: ${{ secrets.PORT }}
-
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           echo "$PRIVATE_KEY" > private_key && chmod 600 private_key
           ssh -o StrictHostKeyChecking=no -i private_key ${USER_NAME}@${HOST} -p ${PORT} '
-           hostname '
+           git checkout main &&
+           git pull https://${GITHUB_TOKEN}@github.com/il90il90/CICDTest.git
+           '
             
