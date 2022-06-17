@@ -4,17 +4,17 @@ on:
     branches: [main]
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
+#   build:
+#     runs-on: ubuntu-latest
 
-    steps:
-      - uses: actions/checkout@v2
+#     steps:
+#       - uses: actions/checkout@v2
 
-    # - name: Build the docker
-    #   run: docker build -t cicd .
+#     # - name: Build the docker
+#     #   run: docker build -t cicd .
 
   Deploy:
-    needs: build
+#     needs: build
     runs-on: ubuntu-latest
 
     steps:
@@ -27,7 +27,7 @@ jobs:
 
         run: |
           echo "$PRIVATE_KEY" > private_key && chmod 600 private_key
-          ssh -o StrictHostKeyChecking=no -i private_key ${USER_NAME}@${HOST} -p 7122'
+          ssh -o StrictHostKeyChecking=no -i private_key il90@109.190.128.68 -p 7122'
             cd /home/apm-admin/CICDTest &&
             git checkout main &&
             git fetch --all &&
